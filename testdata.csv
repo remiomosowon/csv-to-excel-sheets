@@ -2,6 +2,10 @@ Customer No.        ;CUSTOMER NAME LTD.
 Customer Short Name ;CUSTLTD
 Shipment No.        ;SHIP8481M
 No. of Items        ;4
+Transporter         ;DHL
+Transport Date      ;10-11-97
+Delivery Date       ;07-12-97
+Weight              ;1890 KG
 
 A_NUMS     ;B_NUMS                   ;CUST_NUMS              ;CUST_NUMS_2          ;QTY   ;ORD_ID             ;ITEM_ID      ;C00_ID     ;
 0008481A     ;53A710100000        ;                              ;                              ;    63;                              ;11320875  ;C003064  ;
