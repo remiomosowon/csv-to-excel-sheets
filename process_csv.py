@@ -24,7 +24,7 @@ for line in csvfile.readlines():
     elif i == 9:
         titlerow.append(line)
     else:
-        itemid = line.split(';')[6].strip()
+        itemid = line.split(';')[7].strip()
         addtodict(dict, itemid, line)
     i = i + 1
 
@@ -57,8 +57,9 @@ for itemid in dict.keys():
     itemid_sheet.write(titlerownum,3,'CUSTNO2', styleBold)
     itemid_sheet.write(titlerownum,4,'QTY', styleBold)
     itemid_sheet.write(titlerownum,5,'ORDERNO', styleBold)
-    itemid_sheet.write(titlerownum,6,'ITEM', styleBold)
-    itemid_sheet.write(titlerownum,7,'CASE', styleBold)
+    itemid_sheet.write(titlerownum,6,'ORDERNO2', styleBold)
+    itemid_sheet.write(titlerownum,7,'ITEM', styleBold)
+    itemid_sheet.write(titlerownum,8,'CASE', styleBold)
 
     i = titlerownum + 1
     for line in dict[itemid]:
@@ -72,6 +73,7 @@ for itemid in dict.keys():
         row.write(5, rowvalues[5].strip())
         row.write(6, rowvalues[6].strip())
         row.write(7, rowvalues[7].strip())
+        row.write(8, rowvalues[8].strip())
         i = i + 1
 
     # specify a width of 4000 for both columns
@@ -81,7 +83,8 @@ for itemid in dict.keys():
     itemid_sheet.col(3).width = 7600
     itemid_sheet.col(4).width = 2400
     itemid_sheet.col(5).width = 6400
-    itemid_sheet.col(6).width = 3200
+    itemid_sheet.col(6).width = 6400
     itemid_sheet.col(7).width = 3200
+    itemid_sheet.col(8).width = 3200
 
 book.save(input_filename.strip(".csv") + '_output.xls')
