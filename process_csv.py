@@ -14,6 +14,7 @@ dict = {}
 titlerow = []
 toprows = []
 csvfile = file(input_filename, 'r')
+KEY_COLUMN = 'ITEM_ID'
 
 i = 0
 for line in csvfile.readlines():
@@ -23,8 +24,10 @@ for line in csvfile.readlines():
         pass
     elif i == 9:
         titlerow.append(line)
+        col_hdrs = [hdr.strip().upper() for hdr in line.split(';')]
+        key_col_no = col_hdrs.index(KEY_COLUMN)
     else:
-        itemid = line.split(';')[7].strip()
+        itemid = line.split(';')[key_col_no].strip()
         addtodict(dict, itemid, line)
     i = i + 1
 
