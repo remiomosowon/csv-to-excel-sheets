@@ -3,7 +3,8 @@ from Writer import Writer
 # Implementation specifics for OpenExcelWriter
 class OpenExcelWriter(Writer):
     def __init__(self, filename):
-        Writer.__init__(self, filename)
+        # for Python2 support; instead of using just super() 
+        super(OpenExcelWriter, self).__init__(filename)
 
     def new_sheet(self, sheet_name):
         raise NotImplementedError

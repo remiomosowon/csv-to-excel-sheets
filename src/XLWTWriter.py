@@ -4,7 +4,8 @@ from xlwt import easyxf, Workbook
 # Implementation specifics for xlwt
 class XLWTWriter(Writer):
     def __init__(self, filename):
-        Writer.__init__(self, filename)
+        # for Python2 support; instead of using just super() 
+        super(XLWTWriter, self).__init__(filename)
         self.excel_doc = Workbook()
 
     def new_sheet(self, sheet_name):

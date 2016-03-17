@@ -1,5 +1,5 @@
 # ADT to abstract out whichever Excel writer is used
-class Writer:
+class Writer(object):
     def __init__(self, filename):
         self.filename = filename
         self.sheets = {}
@@ -12,7 +12,7 @@ class Writer:
         except KeyError:
             new_sheet = self.new_sheet(sheet_name)
             self.sheets[sheet_name] = new_sheet
-            return self.sheets[sheet_name]
+            return new_sheet
 
     def write_row(self, sheet_name, row_no, list_of_vals, bold=False):
         for col_no, val in enumerate(list_of_vals):
