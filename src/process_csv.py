@@ -11,17 +11,17 @@ if __name__ == "__main__":
     sheet_has_headers = {}                          # Table keeping track of which sheets have header data.
     sheet_current_row = {}
 
-    def has_headers(sheet_name):
-        has_header = sheet_has_headers.get(sheet_name, False)
+    def has_headers(sht_name):
+        has_header = sheet_has_headers.get(sht_name, False)
         if not has_header:
-            sheet_has_headers[sheet_name] = True
+            sheet_has_headers[sht_name] = True
         return has_header
 
-    def current_sheet_row(sheet_name):
-        current_row = sheet_current_row.get(sheet_name, 0)
+    def current_sheet_row(sht_name):
+        current_row = sheet_current_row.get(sht_name, 0)
         if current_row == 0:
-            sheet_current_row[sheet_name] = 0
-        sheet_current_row[sheet_name] += 1
+            sheet_current_row[sht_name] = 0
+        sheet_current_row[sht_name] += 1
         return current_row
 
     with open(input_csv_filename) as csv_file:
@@ -59,7 +59,7 @@ if __name__ == "__main__":
             writer.write_row(sheet_name, current_sheet_row(sheet_name), row_data)
 
         # Adjust column widths.
-        col_widths = [5600,8000,6000,7600,2400,6400,6400,3200]
+        col_widths = [5600, 8000, 6000, 7600, 2400, 6400, 6400, 3200]
         writer.set_column_widths(col_widths)
 
         # Save Excel file.

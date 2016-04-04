@@ -63,3 +63,4 @@ target/
 
 #Mac filesystem stuff
 .DS_Store
+.idea*

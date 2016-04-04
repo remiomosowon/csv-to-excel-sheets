@@ -14,8 +14,8 @@ class Writer(object):
             self.sheets[sheet_name] = new_sheet
             return new_sheet
 
-    def write_row(self, sheet_name, row_no, list_of_vals, bold=False):
-        for col_no, val in enumerate(list_of_vals):
+    def write_row(self, sheet_name, row_no, list_of_values, bold=False):
+        for col_no, val in enumerate(list_of_values):
             self.write_cell(sheet_name, row_no, col_no, val, bold)
 
     # Set column widths across all sheets.

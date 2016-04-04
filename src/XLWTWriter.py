@@ -1,6 +1,7 @@
 from Writer import Writer
 from xlwt import easyxf, Workbook
 
+
 # Implementation specifics for xlwt
 class XLWTWriter(Writer):
     def __init__(self, filename):

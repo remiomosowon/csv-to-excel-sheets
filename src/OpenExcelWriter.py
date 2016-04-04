@@ -1,5 +1,6 @@
 from Writer import Writer
 
+
 # Implementation specifics for OpenExcelWriter
 class OpenExcelWriter(Writer):
     def __init__(self, filename):
